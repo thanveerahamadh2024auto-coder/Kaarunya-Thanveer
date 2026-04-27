@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  text-align: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Title */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4em;
+  margin-top: 40px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+/* Message box */
+.message {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 20px;
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 20px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,255,255,0.8);
+}
+
+/* Button */
+button {
+  margin: 30px;
+  padding: 15px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(0); opacity: 1;}
+  100% {transform: translateY(-900px); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>I’m Sorry ❤️</h1>
+
+<div class="message">
+I never meant to hurt you...  
+Every moment without you feels incomplete 💔  
+You are my happiness, my peace, my everything 💖  
+Please forgive me… I truly love you.
+</div>
+
+<div class="gallery">
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+</div>
+
+<button onclick="showLove()">Tap if you still love me 💖</button>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showLove() {
+  alert("No matter what happens... I will always choose you ❤️");
+}
+
+// floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 400);
+</script>
+
+</body>
+</html>
